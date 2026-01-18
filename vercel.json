@@ -1,0 +1,27 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "win-unpacked/resources/app_asar_extracted/server/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "win-unpacked/resources/app_asar_extracted/dist/**/*",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/win-unpacked/resources/app_asar_extracted/server/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/win-unpacked/resources/app_asar_extracted/dist/$1"
+    }
+  ],
+  "env": {
+    "SUPABASE_URL": "https://hlgbxtguihuzcstzujnj.supabase.co",
+    "SUPABASE_ANON_KEY": "sb_publishable_LNI6coVXzUcLMipou5WQZw_Eb5Ftt04"
+  }
+}

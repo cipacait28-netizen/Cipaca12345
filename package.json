@@ -1,0 +1,29 @@
+{
+  "name": "projectflow-medical-crm",
+  "version": "1.0.0",
+  "description": "Medical CRM Web Application",
+  "main": "win-unpacked/resources/app_asar_extracted/electron-main.cjs",
+  "type": "module",
+  "author": "LeoAfter Dark Technologies",
+  "scripts": {
+    "dev": "node win-unpacked/resources/app_asar_extracted/server/server.js",
+    "build": "node build-installer.js",
+    "start": "node win-unpacked/resources/app_asar_extracted/server/server.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.90.1",
+    "cors": "^2.8.5",
+    "express": "^5.2.1",
+    "googleapis": "^169.0.0"
+  },
+  "devDependencies": {
+    "electron": "^33.4.11",
+    "electron-builder": "^26.4.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "build": {
+    "electronVersion": "33.4.11"
+  }
+}

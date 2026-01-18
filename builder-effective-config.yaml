@@ -1,0 +1,26 @@
+directories:
+  output: Jay Shree Ram
+  buildResources: build
+appId: com.leoafterdark.crm
+productName: LeoAfter Dark Technologies
+files:
+  - filter:
+      - dist/**/*
+      - electron-main.cjs
+      - server/**/*
+      - package.json
+extraResources:
+  - from: server
+    to: server
+win:
+  target: nsis
+  icon: public/app.ico
+  verifyUpdateCodeSignature: false
+  signAndEditExecutable: false
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  perMachine: false
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+electronVersion: 33.4.11

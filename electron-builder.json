@@ -1,0 +1,40 @@
+{
+  "appId": "com.leoafterdark.crm",
+  "productName": "LeoAfter Dark Technologies",
+  "directories": {
+    "output": "dist_installer",
+    "buildResources": "build"
+  },
+  "files": [
+    "win-unpacked/resources/app_asar_extracted/dist/**/*",
+    "win-unpacked/resources/app_asar_extracted/electron-main.cjs",
+    "win-unpacked/resources/app_asar_extracted/server/**/*",
+    "win-unpacked/resources/app_asar_extracted/package.json",
+    "!win-unpacked/resources/app_asar_extracted/server/node_modules/**/*"
+  ],
+  "extraResources": [
+    {
+      "from": "win-unpacked/resources/app_asar_extracted/server",
+      "to": "server",
+      "filter": ["**/*"]
+    }
+  ],
+  "win": {
+    "target": "nsis",
+    "icon": "build/app.ico",
+    "verifyUpdateCodeSignature": false,
+    "signAndEditExecutable": false
+  },
+  "nsis": {
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true,
+    "perMachine": false,
+    "createDesktopShortcut": true,
+    "createStartMenuShortcut": true,
+    "artifactName": "ProjectFlow_Medical_CRM_Setup_${version}.${ext}"
+  },
+  "extraMetadata": {
+    "main": "win-unpacked/resources/app_asar_extracted/electron-main.cjs"
+  },
+  "electronVersion": "33.4.11"
+}
