@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SkillBoostCenter — Executive Presence, Communication & Style</title>
+<meta name="description" content="Premium programs in executive presence, communication, public speaking, appearance and charisma for managers and tech professionals.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b1630; --navy-2:#111f45; --navy-3:#1b2d5e;
+  --pink:#ec4899; --pink-2:#f472b6; --pink-deep:#be185d; --pink-soft:#fdf2f8; --pink-line:#fbcfe8;
+  --white:#fff; --bg:#fffafc; --ink:#0b1630; --muted:#5b6585; --line:#eadff0;
+  --grad-pink:linear-gradient(135deg,#f472b6,#ec4899 55%,#be185d);
+  --grad-navy:linear-gradient(135deg,#111f45,#0b1630);
+  --serif:'Playfair Display',Georgia,serif; --sans:'DM Sans',system-ui,sans-serif;
+  --r:22px; --shadow:0 1px 2px rgba(11,22,48,.04),0 12px 40px -12px rgba(11,22,48,.14);
+  --shadow-lg:0 2px 4px rgba(11,22,48,.05),0 30px 70px -20px rgba(190,24,93,.28);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+svg{display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+section{position:relative}
+:focus-visible{outline:2px solid var(--pink);outline-offset:3px;border-radius:8px}
+
+/* ---------- type ---------- */
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:.74rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--pink-deep)}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--grad-pink);border-radius:2px}
+h1,h2,h3{font-family:var(--serif);line-height:1.1;letter-spacing:-.015em}
+h2.title{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700;margin:14px 0 14px}
+h2.title em{font-style:italic;color:var(--pink-deep)}
+.lead{color:var(--muted);font-size:1.08rem;max-width:560px}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:15px 28px;border-radius:999px;font-weight:600;font-size:.96rem;transition:transform .25s,box-shadow .25s,background .25s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .25s}
+.btn:hover svg{transform:translateX(4px)}
+.btn-pink{background:var(--grad-pink);color:#fff;box-shadow:0 10px 28px -8px rgba(236,72,153,.6)}
+.btn-pink:hover{transform:translateY(-2px);box-shadow:0 16px 36px -8px rgba(236,72,153,.7)}
+.btn-navy{background:var(--navy);color:#fff}
+.btn-navy:hover{transform:translateY(-2px);box-shadow:0 14px 30px -10px rgba(11,22,48,.55)}
+.btn-ghost{border:1.5px solid rgba(11,22,48,.18);color:var(--navy);background:rgba(255,255,255,.6)}
+.btn-ghost:hover{border-color:var(--pink);color:var(--pink-deep);transform:translateY(-2px)}
+.btn-ghost.on-dark{border-color:rgba(255,255,255,.25);color:#fff;background:transparent}
+.btn-ghost.on-dark:hover{border-color:var(--pink-2);color:var(--pink-2)}
+
+/* ---------- nav ---------- */
+.nav{position:fixed;inset:0 0 auto 0;z-index:100;padding:16px 0;transition:all .35s}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.nav.scrolled{padding:10px 0;background:rgba(255,250,252,.82);backdrop-filter:blur(18px) saturate(1.4);border-bottom:1px solid var(--line)}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--serif);font-weight:800;font-size:1.35rem;letter-spacing:-.02em}
+.logo-mark{width:34px;height:34px;border-radius:11px;background:var(--grad-pink);display:grid;place-items:center;box-shadow:0 6px 16px -4px rgba(236,72,153,.55)}
+.logo-mark svg{width:18px;height:18px;color:#fff}
+.logo b{color:var(--pink-deep)}
+.links{display:flex;align-items:center;gap:6px}
+.links a{padding:9px 16px;border-radius:999px;font-size:.9rem;font-weight:500;color:var(--navy);transition:background .2s,color .2s}
+.links a:hover{background:var(--pink-soft);color:var(--pink-deep)}
+.links .btn{padding:11px 22px;color:#fff;margin-left:8px}
+.links .btn:hover{background:var(--grad-pink)}
+.burger{display:none;width:44px;height:44px;border-radius:12px;border:1px solid var(--line);background:#fff;place-items:center}
+.burger svg{width:20px;height:20px}
+
+/* ---------- hero ---------- */
+.hero{padding:150px 0 90px;overflow:hidden;background:
+  radial-gradient(900px 500px at 85% 0%,rgba(244,114,182,.28),transparent 60%),
+  radial-gradient(700px 500px at 0% 30%,rgba(27,45,94,.10),transparent 60%),var(--bg)}
+.hero::after{content:"";position:absolute;inset:0;background-image:radial-gradient(rgba(11,22,48,.09) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(180deg,#000,transparent 70%);-webkit-mask-image:linear-gradient(180deg,#000,transparent 70%);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:10px;padding:7px 16px 7px 8px;border-radius:999px;background:#fff;border:1px solid var(--pink-line);font-size:.82rem;font-weight:600;color:var(--navy);box-shadow:var(--shadow)}
+.pill i{font-style:normal;background:var(--grad-pink);color:#fff;border-radius:999px;padding:3px 10px;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.hero h1{font-size:clamp(2.7rem,6vw,4.7rem);font-weight:700;margin:24px 0 22px}
+.hero h1 em{font-style:italic;background:var(--grad-pink);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+.hero p.lead{font-size:1.18rem;margin-bottom:34px}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px}
+.trust{display:flex;flex-wrap:wrap;gap:28px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.trust div{display:flex;flex-direction:column}
+.trust strong{font-family:var(--serif);font-size:1.9rem;line-height:1;color:var(--navy)}
+.trust span{font-size:.82rem;color:var(--muted);margin-top:6px}
+
+.stack{position:relative;height:600px;perspective:1200px}
+.mini{position:absolute;width:300px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+.mini .art{height:150px}
+.mini .body{padding:18px 20px 20px}
+.mini .tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep)}
+.mini h4{font-family:var(--serif);font-size:1.12rem;line-height:1.25;margin:6px 0 12px}
+.mini .row{display:flex;justify-content:space-between;font-size:.8rem;color:var(--muted)}
+.m1{top:0;left:0;transform:rotate(-6deg) translateZ(0);animation:bob 7s ease-in-out infinite}
+.m2{top:60px;right:0;transform:rotate(5deg);animation:bob 8s ease-in-out -2s infinite;z-index:2}
+.m3{bottom:0;left:14%;transform:rotate(-1.5deg);animation:bob 9s ease-in-out -4s infinite;z-index:3}
+@keyframes bob{0%,100%{translate:0 0}50%{translate:0 -14px}}
+.badge{position:absolute;z-index:4;background:var(--navy);color:#fff;border-radius:18px;padding:14px 18px;display:flex;gap:12px;align-items:center;box-shadow:0 20px 40px -12px rgba(11,22,48,.5);font-size:.82rem}
+.badge b{display:block;font-size:.95rem}
+.badge .dot{width:36px;height:36px;border-radius:12px;background:var(--grad-pink);display:grid;place-items:center}
+.badge .dot svg{width:18px;height:18px}
+.badge.b1{top:8px;right:4%;animation:bob 6s ease-in-out -1s infinite}
+.badge.b2{bottom:70px;right:-2%;animation:bob 7s ease-in-out -3s infinite}
+
+/* ---------- marquee ---------- */
+.marquee{background:var(--navy);padding:20px 0;overflow:hidden;border-block:1px solid rgba(255,255,255,.06)}
+.track{display:flex;width:max-content;animation:slide 40s linear infinite}
+.track span{display:flex;align-items:center;gap:22px;padding-right:22px;font-family:var(--serif);font-style:italic;font-size:1.25rem;color:rgba(255,255,255,.78);white-space:nowrap}
+.track span::after{content:"✦";color:var(--pink-2);font-style:normal;font-size:.8rem}
+@keyframes slide{to{transform:translateX(-50%)}}
+
+/* ---------- browse ---------- */
+.browse{padding:120px 0 110px;background:var(--bg)}
+.browse-head{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:38px}
+.toolbar{position:sticky;top:64px;z-index:20;display:flex;flex-direction:column;gap:14px;padding:14px;margin-bottom:34px;border-radius:26px;background:rgba(255,255,255,.86);backdrop-filter:blur(16px);border:1px solid var(--line);box-shadow:var(--shadow)}
+.tool-row{display:flex;gap:12px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.seg{display:flex;gap:4px;padding:5px;border-radius:999px;background:var(--pink-soft);flex-wrap:wrap}
+.seg button{padding:9px 18px;border-radius:999px;font-size:.88rem;font-weight:600;color:var(--muted);transition:all .25s}
+.seg button:hover{color:var(--navy)}
+.seg button[aria-pressed="true"]{background:var(--navy);color:#fff;box-shadow:0 6px 16px -6px rgba(11,22,48,.5)}
+.search{position:relative;flex:1;min-width:200px;max-width:340px}
+.search svg{position:absolute;left:16px;top:50%;translate:0 -50%;width:18px;height:18px;color:var(--muted)}
+.search input{width:100%;padding:13px 18px 13px 44px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font:inherit;font-size:.92rem;color:var(--ink);transition:border .2s,box-shadow .2s}
+.search input:focus{outline:0;border-color:var(--pink);box-shadow:0 0 0 4px rgba(236,72,153,.14)}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chip{padding:8px 16px;border-radius:999px;border:1.5px solid var(--line);background:#fff;font-size:.84rem;font-weight:600;color:var(--navy);transition:all .2s;display:inline-flex;gap:8px;align-items:center}
+.chip:hover{border-color:var(--pink-2)}
+.chip[aria-pressed="true"]{background:var(--pink-soft);border-color:var(--pink);color:var(--pink-deep)}
+.chip small{font-size:.72rem;font-weight:700;opacity:.6}
+.count{font-size:.86rem;color:var(--muted)}
+.count b{color:var(--navy)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(285px,1fr));gap:26px}
+.card{position:relative;display:flex;flex-direction:column;text-align:left;background:#fff;border-radius:var(--r);border:1px solid var(--line);overflow:hidden;transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s,border-color .3s;animation:pop .5s both}
+@keyframes pop{from{opacity:0;transform:translateY(18px) scale(.97)}}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(380px circle at var(--mx,50%) var(--my,0%),rgba(236,72,153,.13),transparent 45%);opacity:0;transition:opacity .3s;pointer-events:none;z-index:2}
+.card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--pink-line)}
+.card:hover::before{opacity:1}
+.art{position:relative;height:190px;overflow:hidden;display:grid;place-items:center}
+.art svg.pat{position:absolute;inset:0;width:100%;height:100%;opacity:.5}
+.art .ico{position:relative;width:76px;height:76px;border-radius:22px;background:rgba(255,255,255,.92);display:grid;place-items:center;box-shadow:0 18px 36px -10px rgba(11,22,48,.35);transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.card:hover .ico{transform:scale(1.1) rotate(-6deg)}
+.ico svg{width:36px;height:36px}
+.art .aud{position:absolute;top:14px;left:14px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.92);font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--navy)}
+.art .dur{position:absolute;top:14px;right:14px;padding:5px 12px;border-radius:999px;background:rgba(11,22,48,.78);backdrop-filter:blur(6px);font-size:.72rem;font-weight:600;color:#fff}
+.a-pink{background:linear-gradient(135deg,#fbcfe8,#f472b6)}
+.a-navy{background:linear-gradient(135deg,#1b2d5e,#0b1630)}
+.a-blush{background:linear-gradient(135deg,#fdf2f8,#f9a8d4)}
+.a-mix{background:linear-gradient(135deg,#be185d,#1b2d5e)}
+.a-ice{background:linear-gradient(135deg,#dbe5ff,#9bb0e8)}
+.card .body{padding:22px 24px 24px;display:flex;flex-direction:column;flex:1}
+.card .kind{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--pink-deep)}
+.card h3{font-size:1.28rem;font-weight:700;margin:8px 0 10px}
+.card p{font-size:.9rem;color:var(--muted);flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.card .foot{display:flex;align-items:center;justify-content:space-between;margin-top:20px;padding-top:16px;border-top:1px dashed var(--line);font-size:.82rem;color:var(--muted)}
+.card .foot .fmt{display:flex;align-items:center;gap:8px}
+.card .foot .go{display:flex;align-items:center;gap:6px;font-weight:700;color:var(--navy);transition:color .2s,gap .2s}
+.card:hover .go{color:var(--pink-deep);gap:10px}
+.card .go svg{width:16px;height:16px}
+.empty{grid-column:1/-1;text-align:center;padding:70px 20px;border:2px dashed var(--pink-line);border-radius:var(--r);color:var(--muted)}
+.empty h3{color:var(--navy);margin-bottom:8px}
+
+/* ---------- dark: personas ---------- */
+.dark{background:var(--navy);color:#fff;overflow:hidden}
+.dark::before{content:"";position:absolute;width:640px;height:640px;right:-200px;top:-200px;border-radius:50%;background:radial-gradient(circle,rgba(236,72,153,.32),transparent 65%);filter:blur(20px)}
+.dark::after{content:"";position:absolute;width:560px;height:560px;left:-220px;bottom:-240px;border-radius:50%;background:radial-gradient(circle,rgba(59,92,200,.4),transparent 65%)}
+.dark .wrap{position:relative;z-index:1}
+.dark .eyebrow{color:var(--pink-2)}
+.dark h2.title em{color:var(--pink-2)}
+.dark .lead{color:rgba(255,255,255,.66)}
+.personas{padding:120px 0}
+.persona-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:54px}
+.persona{padding:38px;border-radius:28px;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.12);backdrop-filter:blur(10px);transition:transform .4s,border-color .3s}
+.persona:hover{transform:translateY(-6px);border-color:rgba(244,114,182,.5)}
+.persona .who{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.avatar{width:62px;height:62px;border-radius:20px;background:var(--grad-pink);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.7rem;box-shadow:0 14px 30px -10px rgba(236,72,153,.7)}
+.persona .who small{display:block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-2);font-weight:700}
+.persona h3{font-size:1.65rem;font-weight:700}
+.persona blockquote{font-family:var(--serif);font-style:italic;font-size:1.12rem;color:rgba(255,255,255,.82);line-height:1.5;padding-left:18px;border-left:2px solid var(--pink);margin-bottom:26px}
+.persona ul{list-style:none;display:grid;gap:12px;margin-bottom:28px}
+.persona li{display:flex;gap:12px;font-size:.94rem;color:rgba(255,255,255,.75)}
+.persona li svg{flex:none;width:20px;height:20px;color:var(--pink-2);margin-top:2px}
+.persona .link{display:inline-flex;gap:8px;align-items:center;font-weight:700;color:var(--pink-2);cursor:pointer}
+.persona .link svg{width:16px;height:16px;transition:transform .25s}
+.persona .link:hover svg{transform:translateX(5px)}
+
+/* ---------- gaps ---------- */
+.gaps{padding:120px 0;background:linear-gradient(180deg,var(--bg),var(--pink-soft))}
+.center{text-align:center}
+.center .lead{margin-inline:auto}
+.gap-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.gap{padding:34px 30px;border-radius:var(--r);background:#fff;border:1px solid var(--line);transition:all .4s;position:relative;overflow:hidden}
+.gap:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:var(--pink-line)}
+.gap .num{position:absolute;right:20px;top:6px;font-family:var(--serif);font-size:5.5rem;font-weight:800;line-height:1;color:var(--pink-soft);transition:color .3s}
+.gap:hover .num{color:var(--pink-line)}
+.gap .gi{position:relative;width:56px;height:56px;border-radius:18px;display:grid;place-items:center;background:var(--navy);color:#fff;margin-bottom:22px}
+.gap .gi svg{width:26px;height:26px}
+.gap h3{position:relative;font-size:1.4rem;margin-bottom:10px}
+.gap p{position:relative;color:var(--muted);font-size:.95rem}
+
+/* ---------- process ---------- */
+.process{padding:120px 0;background:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:60px;counter-reset:s;position:relative}
+.steps::before{content:"";position:absolute;left:8%;right:8%;top:30px;height:2px;background:repeating-linear-gradient(90deg,var(--pink-line) 0 8px,transparent 8px 16px)}
+.step{position:relative;text-align:center;padding:0 8px}
+.step .n{position:relative;z-index:1;width:60px;height:60px;margin:0 auto 22px;border-radius:50%;background:#fff;border:2px solid var(--pink);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:1.4rem;color:var(--pink-deep);transition:all .3s}
+.step:hover .n{background:var(--grad-pink);color:#fff;transform:scale(1.1)}
+.step h3{font-size:1.2rem;margin-bottom:8px}
+.step p{font-size:.92rem;color:var(--muted)}
+
+/* ---------- faq ---------- */
+.faq{padding:110px 0;background:var(--bg)}
+.faq-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
+details{border-bottom:1px solid var(--line);padding:22px 0}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:20px;align-items:center;font-family:var(--serif);font-weight:700;font-size:1.18rem}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;transition:all .3s}
+summary i svg{width:14px;height:14px;transition:transform .3s}
+details[open] summary i{background:var(--grad-pink);border-color:transparent;color:#fff}
+details[open] summary i svg{transform:rotate(45deg)}
+details p{margin-top:14px;color:var(--muted);max-width:560px}
+
+/* ---------- contact / CTA ---------- */
+.cta{padding:110px 0}
+.cta-card{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+.cta h2.title{color:#fff}
+form{display:grid;gap:14px;padding:30px;border-radius:26px;background:#fff;color:var(--ink);box-shadow:0 40px 80px -30px rgba(0,0,0,.6)}
+form h3{font-size:1.5rem;margin-bottom:4px}
+form label{display:grid;gap:6px;font-size:.8rem;font-weight:700;letter-spacing:.04em;color:var(--navy)}
+form input,form select,form textarea{width:100%;padding:13px 16px;border-radius:14px;border:1.5px solid var(--line);font:inherit;font-size:.95rem;background:var(--bg);color:var(--ink);transition:border .2s,box-shadow .2s}
+form textarea{resize:vertical;min-height:90px}
+form input:focus,form select:focus,form textarea:focus{outline:0;border-color:var(--pink);box-shadow:0 0 0 4px rgba(236,72,153,.14)}
+form .two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+form .btn{justify-content:center;width:100%;border-radius:16px}
+form small{color:var(--muted);font-size:.78rem;text-align:center}
+
+/* ---------- footer ---------- */
+footer{background:var(--navy);color:rgba(255,255,255,.6);padding:70px 0 30px;border-top:1px solid rgba(255,255,255,.08)}
+.foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px}
+footer .logo{color:#fff;margin-bottom:14px}
+footer .logo b{color:var(--pink-2)}
+footer p{max-width:300px;font-size:.92rem}
+footer h5{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;margin-bottom:16px}
+footer li{list-style:none}
+footer li a{display:block;padding:5px 0;font-size:.92rem;transition:color .2s}
+footer li a:hover{color:var(--pink-2)}
+.copy{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding-top:26px;border-top:1px solid rgba(255,255,255,.08);font-size:.84rem}
+
+/* ---------- modal ---------- */
+.modal{position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;padding:20px}
+.modal.open{display:flex}
+.scrim{position:absolute;inset:0;background:rgba(7,12,30,.72);backdrop-filter:blur(8px);animation:fade .3s}
+.sheet{position:relative;width:100%;max-width:760px;max-height:92vh;overflow:auto;background:#fff;border-radius:30px;box-shadow:0 50px 120px -30px rgba(0,0,0,.7);animation:rise .45s cubic-bezier(.2,.8,.2,1)}
+@keyframes fade{from{opacity:0}}
+@keyframes rise{from{opacity:0;transform:translateY(40px) scale(.96)}}
+.sheet .art{height:200px}
+.x{position:absolute;top:16px;right:16px;z-index:5;width:42px;height:42px;border-radius:50%;background:#fff;display:grid;place-items:center;box-shadow:0 8px 20px -6px rgba(0,0,0,.3);transition:transform .25s}
+.x:hover{transform:rotate(90deg)}
+.x svg{width:18px;height:18px}
+.sheet .in{padding:30px 36px 38px}
+.sheet h3{font-size:clamp(1.5rem,3.5vw,2.1rem);margin:8px 0 18px}
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:26px}
+.fact{padding:14px 16px;border-radius:16px;background:var(--pink-soft);border:1px solid var(--pink-line)}
+.fact small{display:block;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep)}
+.fact b{font-size:.94rem}
+.sheet h5{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-deep);margin-bottom:8px}
+.sheet .txt{color:var(--muted);margin-bottom:26px;font-size:1.02rem}
+.sheet .actions{display:flex;gap:12px;flex-wrap:wrap}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- responsive ---------- */
+@media(max-width:980px){
+  .hero-grid,.faq-grid,.cta-card,.persona-grid{grid-template-columns:1fr}
+  .stack{height:600px;max-width:520px;margin:0 auto;width:100%}
+  .gap-grid{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr 1fr;row-gap:40px}.steps::before{display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .links{position:fixed;inset:70px 16px auto 16px;flex-direction:column;align-items:stretch;padding:14px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-lg);display:none}
+  .links.show{display:flex}
+  .links a{padding:14px 18px}.links .btn{margin:6px 0 0;justify-content:center}
+  .burger{display:grid}
+  .toolbar{top:58px}
+}
+@media(max-width:600px){
+  .wrap{padding:0 20px}
+  .hero{padding-top:120px}
+  .stack{height:480px}
+  .mini{width:250px}.mini .art{height:120px}
+  .m1{left:0}.m2{top:90px}.m3{left:8%}
+  .badge.b2{display:none}
+  .facts{grid-template-columns:1fr}
+  form .two{grid-template-columns:1fr}
+  .steps{grid-template-columns:1fr}
+  .persona{padding:28px 24px}
+  .sheet .in{padding:24px}
+  .toolbar{position:static}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#top" class="logo" aria-label="SkillBoostCenter home">
+      <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 11l4 4 6-8"/><path d="M14 7h6v6"/></svg></span>
+      <span>SkillBoost<b>Center</b></span>
+    </a>
+    <nav class="links" id="links" aria-label="Main">
+      <a href="#browse">Programs</a>
+      <a href="#who">Who it's for</a>
+      <a href="#gaps">Skill gaps</a>
+      <a href="#process">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#contact" class="btn btn-navy">Book a consult</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill rv"><i>New</i> 8 programs for leaders in the making</span>
+      <h1 class="rv">Look, sound &amp; lead like the <em>next level</em> you want.</h1>
+      <p class="lead rv">Premium programs in executive presence, communication, public speaking and personal style — built for mid-level managers and tech professionals ready to be seen as leaders.</p>
+      <div class="hero-cta rv">
+        <a href="#browse" class="btn btn-pink">Browse programs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#who" class="btn btn-ghost">Find your path</a>
+      </div>
+      <div class="trust rv">
+        <div><strong>8</strong><span>Focused programs</span></div>
+        <div><strong>15–60</strong><span>Days to transform</span></div>
+        <div><strong>Live + Online</strong><span>Cohorts &amp; 1-on-1 feedback</span></div>
+      </div>
+    </div>
+    <div class="stack rv" aria-hidden="true" id="stack">
+      <div class="mini m1"><div class="art a-navy"></div><div class="body"><div class="tag">Communication</div><h4>Say It Like a C-Suite</h4><div class="row"><span>6 Weeks</span><span>Live workshops</span></div></div></div>
+      <div class="mini m2"><div class="art a-pink"></div><div class="body"><div class="tag">Behavioral</div><h4>Executive Presence Masterclass</h4><div class="row"><span>30 Days</span><span>Online cohort</span></div></div></div>
+      <div class="mini m3"><div class="art a-mix"></div><div class="body"><div class="tag">Personality</div><h4>The Charisma Catalyst</h4><div class="row"><span>6 Weeks</span><span>Identity transformation</span></div></div></div>
+      <div class="badge b1"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span><span><b>1-on-1 feedback</b>on appearance programs</span></div>
+      <div class="badge b2"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4ZM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span><b>Live practice labs</b>speak under pressure</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<!-- BROWSE -->
+<section class="browse" id="browse">
+  <div class="wrap">
+    <div class="browse-head">
+      <div>
+        <span class="eyebrow">Program library</span>
+        <h2 class="title">Browse every <em>program</em></h2>
+        <p class="lead">Filter by who you are and the gap you want to close. Open any card for the full pitch.</p>
+      </div>
+      <p class="count" id="count" aria-live="polite"></p>
+    </div>
+
+    <div class="toolbar" role="search">
+      <div class="tool-row">
+        <div class="seg" id="audSeg" role="group" aria-label="Audience"></div>
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><input id="q" type="search" placeholder="Search programs…" aria-label="Search programs"></label>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Skill type"></div>
+    </div>
+
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- PERSONAS -->
+<section class="dark personas" id="who">
+  <div class="wrap">
+    <div class="rv" style="max-width:660px">
+      <span class="eyebrow">Who it's for</span>
+      <h2 class="title">Two journeys. <em>One</em> goal: be seen as a leader.</h2>
+      <p class="lead">Each audience gets its own three-part track — behavior, communication and appearance — in the language they actually trust.</p>
+    </div>
+    <div class="persona-grid">
+      <article class="persona rv">
+        <div class="who"><div class="avatar">M</div><div><small>Corporate mid-level managers</small><h3>"Manager Marcus"</h3></div></div>
+        <blockquote>Values respect, wants the C-suite fast-track, fears imposter syndrome — and is stuck between "coworker" and "commander".</blockquote>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Executive Presence Masterclass</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Say It Like a C-Suite</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>Dressed for the Promotion</li>
+        </ul>
+        <a class="link" data-aud="managers" href="#browse">See Marcus's programs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+      <article class="persona rv">
+        <div class="who"><div class="avatar">I</div><div><small>Tech &amp; STEM professionals</small><h3>"Introvert Ian"</h3></div></div>
+        <blockquote>Logical, structured, allergic to vague fluff. Wants systematic, algorithm-style frameworks to move into leadership — without losing their tech identity.</blockquote>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>The Tech Leader's Algorithm</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>The Communication Bridge</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg>The Tech Executive Wardrobe</li>
+        </ul>
+        <a class="link" data-aud="tech" href="#browse">See Ian's programs <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- GAPS -->
+<section class="gaps" id="gaps">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">The framework</span>
+      <h2 class="title">Close the <em>three gaps</em> holding you back</h2>
+      <p class="lead">Talent gets you the role. Presence, voice and visual signature get you the promotion.</p>
+    </div>
+    <div class="gap-grid" style="text-align:left">
+      <div class="gap rv"><span class="num">01</span><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></div><h3>Behavioral gaps</h3><p>Shed the "technical doer" identity. Build body language, stakeholder authority and the psychological presence that commands a room.</p></div>
+      <div class="gap rv"><span class="num">02</span><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12Z"/></svg></div><h3>Communication gaps</h3><p>Master the precise frameworks top executives use to influence decisions, translate complexity and control the conversation.</p></div>
+      <div class="gap rv"><span class="num">03</span><div class="gi"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3 3 7l3 3 2-1v12h8V9l2 1 3-3-5-4a4 4 0 0 1-8 0Z"/></svg></div><h3>Appearance gaps</h3><p>Upgrade your visual signature — wardrobe and video presence — so you look like the role you're aiming for, before you speak.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">How it works</span>
+      <h2 class="title">From stuck to <em>in demand</em> in four steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step rv"><div class="n">1</div><h3>Pick your path</h3><p>Choose the program that matches your role and the gap that costs you most.</p></div>
+      <div class="step rv"><div class="n">2</div><h3>Learn the system</h3><p>Structured modules and frameworks — online cohorts, live workshops or micro-learning.</p></div>
+      <div class="step rv"><div class="n">3</div><h3>Practice live</h3><p>Practice labs and 1-on-1 feedback so the skills hold up under real pressure.</p></div>
+      <div class="step rv"><div class="n">4</div><h3>Get noticed</h3><p>Walk into the room with presence — and watch respect, trust and opportunities follow.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="rv">
+      <span class="eyebrow">Questions</span>
+      <h2 class="title">Good to <em>know</em></h2>
+      <p class="lead">Can't find your answer? Send us a note and we'll point you to the right program.</p>
+      <a href="#contact" class="btn btn-pink" style="margin-top:26px">Ask us anything <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="rv">
+      <details open><summary>Which program should I start with?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Start with the gap that costs you most. If you hesitate in meetings, begin with communication. If you feel like an accidental leader, begin with behavioral. Not sure? Book a consult and we'll map it for you.</p></details>
+      <details><summary>Are the programs live or self-paced?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>It depends on the program: online cohorts, live interactive workshops, live classes with 1-on-1 feedback, framework-driven bootcamps and micro-learning. Each card lists its exact format.</p></details>
+      <details><summary>I'm an introvert — will I have to become someone else?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>No. The tech programs are built so you don't need to change your personality to lead — they turn presence and stakeholder interaction into logical, step-by-step systems that feel authentic.</p></details>
+      <details><summary>Do I need to wear a suit?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>Not at all. The Tech Executive Wardrobe shows how to look like a tech executive while staying comfortable and true to tech culture.</p></details>
+      <details><summary>How long does each program take?<i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></i></summary><p>From 15 days for the appearance programs up to 8 weeks for The Fearless Speaker Blueprint.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA / CONTACT -->
+<section class="dark cta" id="contact">
+  <div class="wrap cta-card">
+    <div class="rv">
+      <span class="eyebrow">Start today</span>
+      <h2 class="title">Your next level is <em>one decision</em> away.</h2>
+      <p class="lead">Tell us where you are and where you want to be. We'll recommend the right program and the next cohort.</p>
+    </div>
+    <form class="rv" id="form">
+      <h3>Book a free consult</h3>
+      <div class="two">
+        <label>Name<input name="name" required autocomplete="name" placeholder="Your name"></label>
+        <label>Email<input name="email" type="email" required autocomplete="email" placeholder="you@company.com"></label>
+      </div>
+      <label>I'm interested in
+        <select name="program" id="progSel"><option value="">Not sure yet</option></select>
+      </label>
+      <label>Tell us about your goal<textarea name="msg" placeholder="e.g. I'm a manager aiming for director and want to speak with more authority."></textarea></label>
+      <button class="btn btn-pink" type="submit">Send enquiry <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      <small>Opens your email app with the details pre-filled.</small>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><a href="#top" class="logo"><span class="logo-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17 10 11l4 4 6-8"/><path d="M14 7h6v6"/></svg></span><span>SkillBoost<b>Center</b></span></a><p>Premium programs in executive presence, communication and personal style for the leaders of tomorrow.</p></div>
+      <div><h5>Programs</h5><ul><li><a href="#browse" data-cat="Behavioral">Behavioral</a></li><li><a href="#browse" data-cat="Communication">Communication</a></li><li><a href="#browse" data-cat="Appearance">Appearance</a></li><li><a href="#browse" data-cat="Personality">Personality</a></li></ul></div>
+      <div><h5>Who it's for</h5><ul><li><a href="#browse" data-aud="managers">Mid-level managers</a></li><li><a href="#browse" data-aud="tech">Tech &amp; STEM</a></li><li><a href="#browse" data-aud="all">Everyone</a></li></ul></div>
+      <div><h5>Company</h5><ul><li><a href="#process">How it works</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> SkillBoostCenter. All rights reserved.</span><span>People · Purpose · Potential</span></div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+  <div class="scrim" data-close></div>
+  <div class="sheet" id="sheet"></div>
+</div>
+
+<script>
+// TODO: set the real inbox that should receive enquiries.
+const CONTACT_EMAIL = "hello@skillboostcenter.com";
+
+const I = { // 36px stroke icons
+  presence:'<path d="M12 3l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.3 6.8 19.1l1-5.8L3.5 9.2l5.9-.9L12 3Z"/>',
+  speak:'<path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4ZM5 11a7 7 0 0 0 14 0M12 18v3"/>',
+  suit:'<path d="M8 3 3 7l3 3 2-1v12h8V9l2 1 3-3-5-4a4 4 0 0 1-8 0Z"/>',
+  algo:'<path d="M8 6 3 12l5 6M16 6l5 6-5 6M14 4l-4 16"/>',
+  bridge:'<path d="M3 17h18M5 17v-6a7 7 0 0 1 14 0v6M9 17v-5M15 17v-5M12 17V6"/>',
+  spark:'<path d="M12 2v5M12 17v5M2 12h5M17 12h5M5.6 5.6l3.2 3.2M15.2 15.2l3.2 3.2M5.6 18.4l3.2-3.2M15.2 8.8l3.2-3.2"/>',
+  chat:'<path d="M21 12a8 8 0 0 1-11.6 7.1L3 21l1.9-5.4A8 8 0 1 1 21 12Z"/>',
+  mic:'<rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/>'
+};
+const AUD = {managers:"Managers", tech:"Tech & STEM", all:"Everyone"};
+
+const PROGRAMS = [
+  {id:"epm", aud:"managers", cat:"Behavioral", icon:"presence", art:"a-pink",
+   title:"The Executive Presence Masterclass: Command the Room & Overcome Imposter Syndrome",
+   short:"Executive Presence Masterclass", duration:"30 Days", format:"Online Cohort",
+   text:"Stop feeling like an accidental leader. Learn how to shed the \"technical doer\" identity and effortlessly project the psychological authority required to command high-stakes boardrooms and respect from your team."},
+  {id:"sic", aud:"managers", cat:"Communication", icon:"chat", art:"a-navy",
+   title:"Say It Like a C-Suite: Advanced Communication & Boardroom Persuasion",
+   short:"Say It Like a C-Suite", duration:"6 Weeks", format:"Live Interactive Workshops",
+   text:"Your hard work speaks for itself, but your communication might be holding you back. Stop losing promotions to smoother talkers. Master the precise linguistic frameworks used by top executives to influence decisions and control conversations."},
+  {id:"dfp", aud:"managers", cat:"Appearance", icon:"suit", art:"a-blush",
+   title:"Dressed for the Promotion: Wardrobe & Video Presence Architecture",
+   short:"Dressed for the Promotion", duration:"15 Days", format:"Live Classes + 1-on-1 Feedback",
+   text:"If you show up to a high-stakes meeting looking tired or uninspired, you lose authority before you even unmute. Upgrade your visual signature to match your ambition."},
+  {id:"tla", aud:"tech", cat:"Behavioral", icon:"algo", art:"a-ice",
+   title:"The Tech Leader's Algorithm: Assertive Body Language & Stakeholder Authority",
+   short:"The Tech Leader's Algorithm", duration:"30 Days", format:"Framework-Driven Bootcamp",
+   text:"You don't need to change your personality to lead. Turn body language and stakeholder interaction into a logical, step-by-step system that commands immediate respect in cross-functional meetings without feeling forced or fake."},
+  {id:"tcb", aud:"tech", cat:"Communication", icon:"bridge", art:"a-navy",
+   title:"The Communication Bridge: Translating Complex Code into Business Value",
+   short:"The Communication Bridge", duration:"6 Weeks", format:"Systems-Based Online Training",
+   text:"You don't need a better algorithm; you need a better way to explain it to the board. Stop over-explaining code and start pitching business outcomes so non-technical stakeholders finally understand your true financial value."},
+  {id:"tew", aud:"tech", cat:"Appearance", icon:"suit", art:"a-blush",
+   title:"The Tech Executive Wardrobe: Upgrading Your Style Without Wearing a Suit",
+   short:"The Tech Executive Wardrobe", duration:"15 Days", format:"Micro-learning",
+   text:"Looking like a junior developer keeps you paid like one. Learn the systematic blueprint to elevate your appearance and look like a tech executive while staying completely comfortable and authentic to tech culture."},
+  {id:"fsb", aud:"all", cat:"Communication", icon:"mic", art:"a-mix",
+   title:"The Fearless Speaker Blueprint: Command Meetings, Crush Interviews, and Influence Clients",
+   short:"The Fearless Speaker Blueprint", duration:"8 Weeks", format:"Online Cohort + Live Practice Labs",
+   outcome:"Eliminate hesitation, speak up dynamically in any meeting, articulate thoughts clearly under pressure, and project absolute authority during high-stakes interviews or client pitches.",
+   text:"Public speaking and communication for anyone who needs to be heard — in meetings, interviews and client pitches."},
+  {id:"ccx", aud:"all", cat:"Personality", icon:"spark", art:"a-pink",
+   title:"The Charisma Catalyst: Elevate Your Presence, Build Magnetic Confidence, and Become In-Demand",
+   short:"The Charisma Catalyst", duration:"6 Weeks", format:"Step-by-Step Identity Transformation",
+   outcome:"Rebuild personal style and identity from the ground up, develop high-status body language, build strong networks, and walk into any room with a magnetic, undeniable presence.",
+   text:"Personality development and charisma for anyone ready to rebuild how they show up — from style to body language to network."}
+];
+// cards for the 'all' programs use their target outcome as the blurb
+PROGRAMS.forEach(p=>{ if(p.outcome) p.text = p.outcome; });
+
+const $ = s=>document.querySelector(s);
+const state = {aud:"all-f", cat:null, q:""};
+const svg = (name,w=36)=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="width:${w}px;height:${w}px">${I[name]}</svg>`;
+const pattern = id=>`<svg class="pat" viewBox="0 0 300 190" preserveAspectRatio="xMidYMid slice"><defs><pattern id="p${id}" width="26" height="26" patternUnits="userSpaceOnUse"><circle cx="2" cy="2" r="1.4" fill="#fff"/></pattern></defs><rect width="300" height="190" fill="url(#p${id})"/><circle cx="260" cy="20" r="70" fill="none" stroke="#fff" stroke-opacity=".5"/><circle cx="260" cy="20" r="110" fill="none" stroke="#fff" stroke-opacity=".25"/></svg>`;
+const iconColor = a=> (a==="a-navy"||a==="a-mix") ? "#be185d" : "#0b1630";
+
+/* marquee */
+const words = ["Executive Presence","Boardroom Persuasion","Public Speaking","Charisma","Stakeholder Authority","Video Presence","Wardrobe Architecture","Imposter-Syndrome Proof"];
+$("#track").innerHTML = [...words,...words].map(w=>`<span>${w}</span>`).join("");
+
+/* filters */
+const audOpts = [["all-f","All programs"],["managers","Managers"],["tech","Tech & STEM"],["all","For everyone"]];
+const cats = ["Behavioral","Communication","Appearance","Personality"];
+
+function drawFilters(){
+  $("#audSeg").innerHTML = audOpts.map(([k,l])=>`<button type="button" data-a="${k}" aria-pressed="${state.aud===k}">${l}</button>`).join("");
+  $("#chips").innerHTML = cats.map(c=>{
+    const n = PROGRAMS.filter(p=>(state.aud==="all-f"||p.aud===state.aud)&&p.cat===c).length;
+    return `<button type="button" class="chip" data-c="${c}" aria-pressed="${state.cat===c}">${c}<small>${n}</small></button>`;
+  }).join("");
+}
+function matches(p){
+  if(state.aud!=="all-f" && p.aud!==state.aud) return false;
+  if(state.cat && p.cat!==state.cat) return false;
+  const q = state.q.trim().toLowerCase();
+  return !q || (p.title+" "+p.text+" "+p.cat+" "+p.format+" "+AUD[p.aud]).toLowerCase().includes(q);
+}
+function drawGrid(){
+  const list = PROGRAMS.filter(matches);
+  $("#count").innerHTML = `Showing <b>${list.length}</b> of ${PROGRAMS.length} programs`;
+  $("#grid").innerHTML = list.length ? list.map((p,i)=>`
+    <button class="card" data-id="${p.id}" style="animation-delay:${i*50}ms" aria-label="${p.short} — view details">
+      <div class="art ${p.art}">${pattern(p.id)}
+        <span class="aud">${AUD[p.aud]}</span><span class="dur">${p.duration}</span>
+        <span class="ico" style="color:${iconColor(p.art)}">${svg(p.icon)}</span>
+      </div>
+      <div class="body">
+        <span class="kind">${p.cat}</span>
+        <h3>${p.short}</h3>
+        <p>${p.text}</p>
+        <div class="foot"><span class="fmt">${p.format}</span><span class="go">Details <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></div>
+      </div>
+    </button>`).join("")
+  : `<div class="empty"><h3>No programs match yet</h3><p>Try a different filter or clear your search.</p></div>`;
+}
+function refresh(){ drawFilters(); drawGrid(); }
+
+$("#audSeg").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.aud=b.dataset.a;refresh()});
+$("#chips").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;state.cat=state.cat===b.dataset.c?null:b.dataset.c;refresh()});
+$("#q").addEventListener("input",e=>{state.q=e.target.value;drawGrid()});
+// jump-links that preset filters
+document.addEventListener("click",e=>{
+  const a=e.target.closest("[data-aud],[data-cat]"); if(!a||a.tagName==="BUTTON")return;
+  if(a.dataset.aud) state.aud=a.dataset.aud==="all"?"all":a.dataset.aud;
+  if(a.dataset.cat) {state.cat=a.dataset.cat; state.aud="all-f"} else state.cat=null;
+  refresh();
+});
+// spotlight hover
+$("#grid").addEventListener("pointermove",e=>{const c=e.target.closest(".card");if(!c)return;const r=c.getBoundingClientRect();c.style.setProperty("--mx",(e.clientX-r.left)+"px");c.style.setProperty("--my",(e.clientY-r.top)+"px")});
+
+/* modal */
+const modal=$("#modal"), sheet=$("#sheet"); let lastFocus=null;
+function openModal(id){
+  const p=PROGRAMS.find(x=>x.id===id); lastFocus=document.activeElement;
+  const isAll = p.aud==="all";
+  sheet.innerHTML = `
+    <button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1630" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="art ${p.art}">${pattern("m"+p.id)}<span class="aud">${AUD[p.aud]}</span><span class="ico" style="color:${iconColor(p.art)}">${svg(p.icon)}</span></div>
+    <div class="in">
+      <span class="kind eyebrow">${p.cat} program</span>
+      <h3 id="mTitle">${p.title}</h3>
+      <div class="facts">
+        <div class="fact"><small>Duration</small><b>${p.duration}</b></div>
+        <div class="fact"><small>Format</small><b>${p.format}</b></div>
+        <div class="fact"><small>Best for</small><b>${AUD[p.aud]}</b></div>
+      </div>
+      <h5>${isAll?"Target outcome":"Why you'll want it"}</h5>
+      <p class="txt">${p.text}</p>
+      <div class="actions">
+        <button class="btn btn-pink" data-enroll="${p.id}">Enquire about this program <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <button class="btn btn-ghost" data-close>Keep browsing</button>
+      </div>
+    </div>`;
+  modal.classList.add("open"); document.body.style.overflow="hidden"; sheet.querySelector(".x").focus();
+}
+function closeModal(){ modal.classList.remove("open"); document.body.style.overflow=""; lastFocus&&lastFocus.focus&&lastFocus.focus(); }
+$("#grid").addEventListener("click",e=>{const c=e.target.closest(".card");if(c)openModal(c.dataset.id)});
+modal.addEventListener("click",e=>{
+  if(e.target.closest("[data-close]")) return closeModal();
+  const en=e.target.closest("[data-enroll]");
+  if(en){ $("#progSel").value=en.dataset.enroll; closeModal(); $("#contact").scrollIntoView({behavior:"smooth"}); }
+});
+document.addEventListener("keydown",e=>{ if(e.key==="Escape"&&modal.classList.contains("open")) closeModal(); });
+
+/* contact form */
+$("#progSel").innerHTML += PROGRAMS.map(p=>`<option value="${p.id}">${p.short}</option>`).join("");
+$("#form").addEventListener("submit",e=>{
+  e.preventDefault(); const f=new FormData(e.target); const p=PROGRAMS.find(x=>x.id===f.get("program"));
+  const body=`Name: ${f.get("name")}\nEmail: ${f.get("email")}\nProgram: ${p?p.title:"Not sure yet"}\n\n${f.get("msg")||""}`;
+  location.href=`mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Program enquiry"+(p?" — "+p.short:""))}&body=${encodeURIComponent(body)}`;
+});
+
+/* nav, burger, reveal, year */
+const nav=$("#nav"); const onScroll=()=>nav.classList.toggle("scrolled",scrollY>30); onScroll(); addEventListener("scroll",onScroll,{passive:true});
+const burger=$("#burger"), links=$("#links");
+burger.addEventListener("click",()=>{const o=links.classList.toggle("show");burger.setAttribute("aria-expanded",o)});
+links.addEventListener("click",e=>{if(e.target.closest("a")){links.classList.remove("show");burger.setAttribute("aria-expanded","false")}});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)*70+"ms";io.observe(el)});
+// hero card tilt
+const stack=$("#stack");
+if(matchMedia("(hover:hover)").matches){ stack.parentElement.addEventListener("pointermove",e=>{const r=stack.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;stack.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg)`}); stack.style.transition="transform .3s"; }
+$("#yr").textContent=new Date().getFullYear();
+refresh();
+</script>
+</body>
+</html>
