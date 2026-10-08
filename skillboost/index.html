@@ -85,7 +85,7 @@ h2.title em{font-style:italic;color:var(--pink-deep)}
 
 .stack{position:relative;height:600px;perspective:1200px}
 .mini{position:absolute;width:300px;border-radius:24px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-lg);overflow:hidden;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
-.mini .art{height:150px}
+.mini .art{height:170px;overflow:hidden}.mini .art img{width:100%;height:100%;object-fit:cover}
 .mini .body{padding:18px 20px 20px}
 .mini .tag{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--pink-deep)}
 .mini h4{font-family:var(--serif);font-size:1.12rem;line-height:1.25;margin:6px 0 12px}
@@ -292,9 +292,9 @@ footer li a:hover{color:var(--pink-2)}
 .tf-list s{color:var(--muted);text-decoration-color:var(--pink)}
 .tf-list b{margin-left:auto;color:var(--pink-deep);font-size:.9rem;white-space:nowrap}
 .showcase{padding:110px 0;background:linear-gradient(180deg,var(--pink-soft),var(--bg))}
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px;align-items:start}
+.shots{display:grid;grid-template-columns:repeat(2,1fr);gap:30px;margin:56px auto 0;max-width:820px;align-items:start}
 .shot{display:block;width:100%;padding:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;position:relative}
-.shot:nth-child(2){margin-top:44px}
+.shot:nth-child(2){margin-top:56px}
 .shot:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:var(--shadow-lg)}
 .shot img{width:100%;height:auto}
 .shot span{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;background:rgba(11,22,48,.82);backdrop-filter:blur(6px);color:#fff;font-size:.8rem;font-weight:600;opacity:0;transform:translateY(8px);transition:all .3s}
@@ -303,7 +303,7 @@ footer li a:hover{color:var(--pink-2)}
 .lb.open{display:grid}
 .lb img{max-width:min(94vw,900px);max-height:90vh;border-radius:18px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
 .lb .x{position:absolute;top:20px;right:20px}
-@media(max-width:980px){.mentor-grid,.tf-grid{grid-template-columns:1fr;gap:56px}.shots{grid-template-columns:1fr 1fr}.shot:nth-child(2){margin-top:0}.portrait-wrap .quote{left:8px}}
+@media(max-width:980px){.mentor-grid,.tf-grid{grid-template-columns:1fr;gap:56px}.shot:nth-child(2){margin-top:0}.portrait-wrap .quote{left:8px}}
 @media(max-width:600px){.shots{grid-template-columns:1fr}.tf-list li{flex-wrap:wrap}.tf-list b{margin-left:50px}}
 
 /* ---------- reveal ---------- */
@@ -352,7 +352,7 @@ footer li a:hover{color:var(--pink-2)}
     <nav class="links" id="links" aria-label="Main">
       <a href="#browse">Programs</a>
       <a href="#who">Who it's for</a>
-      <a href="#mentor">Mentor</a>
+      <a href="#mentor">Founder</a>
       <a href="#gaps">Skill gaps</a>
       <a href="#process">How it works</a>
       <a href="#faq">FAQ</a>
@@ -381,9 +381,9 @@ footer li a:hover{color:var(--pink-2)}
       </div>
     </div>
     <div class="stack rv" aria-hidden="true" id="stack">
-      <div class="mini m1"><div class="art a-navy"></div><div class="body"><div class="tag">Communication</div><h4>Say It Like a C-Suite</h4><div class="row"><span>6 Weeks</span><span>Live workshops</span></div></div></div>
-      <div class="mini m2"><div class="art a-pink"></div><div class="body"><div class="tag">Behavioral</div><h4>Executive Presence Masterclass</h4><div class="row"><span>30 Days</span><span>Online cohort</span></div></div></div>
-      <div class="mini m3"><div class="art a-mix"></div><div class="body"><div class="tag">Personality</div><h4>The Charisma Catalyst</h4><div class="row"><span>6 Weeks</span><span>Identity transformation</span></div></div></div>
+      <div class="mini m1"><div class="art a-navy"><img src="images/hero-1.jpg" alt=""></div><div class="body"><div class="tag">Communication</div><h4>Say It Like a C-Suite</h4><div class="row"><span>6 Weeks</span><span>Live workshops</span></div></div></div>
+      <div class="mini m2"><div class="art a-pink"><img src="images/hero-2.jpg" alt=""></div><div class="body"><div class="tag">Behavioral</div><h4>Executive Presence Masterclass</h4><div class="row"><span>30 Days</span><span>Online cohort</span></div></div></div>
+      <div class="mini m3"><div class="art a-mix"><img src="images/hero-3.jpg" alt=""></div><div class="body"><div class="tag">Personality</div><h4>The Charisma Catalyst</h4><div class="row"><span>6 Weeks</span><span>Identity transformation</span></div></div></div>
       <div class="badge b1"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 5 5L20 7"/></svg></span><span><b>1-on-1 feedback</b>on appearance programs</span></div>
       <div class="badge b2"><span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v4a4 4 0 0 0 8 0V7a4 4 0 0 0-4-4ZM5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span><span><b>Live practice labs</b>speak under pressure</span></div>
     </div>
@@ -471,11 +471,11 @@ footer li a:hover{color:var(--pink-2)}
   <div class="wrap mentor-grid">
     <div class="portrait-wrap rv">
       <div class="portrait"><img src="images/mentor-portrait.jpg" alt="Illustrated portrait of the SkillBoostCenter founder smiling with a coffee" loading="lazy"></div>
-      <div class="quote">"Better HR, Better Workplace, Better Tomorrow."<b>SkillBoostCenter</b></div>
+      <div class="quote">"Better HR, Better Workplace, Better Tomorrow."<b>Founder &amp; CEO</b></div>
     </div>
     <div class="rv">
-      <span class="eyebrow">Meet your mentor</span>
-      <h2 class="title">The expert behind <em>every program</em></h2>
+      <span class="eyebrow">Meet our founder</span>
+      <h2 class="title">The founder behind <em>every program</em></h2>
       <p class="txt">With years of hands-on experience in HR consulting, talent acquisition and career development, SkillBoostCenter was founded with a singular mission: to make expert career guidance accessible to everyone.</p>
       <p class="txt">Every program blends practical HR knowledge with genuine passion for people's growth. The philosophy is simple — <em>People, Purpose, Potential.</em></p>
       <div class="pillars"><span>People</span><span>Purpose</span><span>Potential</span></div>
@@ -511,7 +511,6 @@ footer li a:hover{color:var(--pink-2)}
       <p class="lead">A look at what we share — tap any card to view it larger.</p>
     </div>
     <div class="shots">
-      <button class="shot rv" data-lb="images/poster-resume.jpg"><img src="images/poster-resume.jpg" alt="Resume Masterclass poster" loading="lazy"><span>Resume Masterclass</span></button>
       <button class="shot rv" data-lb="images/poster-confidence.jpg"><img src="images/poster-confidence.jpg" alt="Build your career with confidence poster" loading="lazy"><span>Build Your Career with Confidence</span></button>
       <button class="shot rv" data-lb="images/poster-interview.jpg"><img src="images/poster-interview.jpg" alt="HR expert interviewing a candidate" loading="lazy"><span>Interview Prep &amp; Career Guidance</span></button>
     </div>
