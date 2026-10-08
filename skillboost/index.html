@@ -266,6 +266,46 @@ footer li a:hover{color:var(--pink-2)}
 .sheet .txt{color:var(--muted);margin-bottom:26px;font-size:1.02rem}
 .sheet .actions{display:flex;gap:12px;flex-wrap:wrap}
 
+
+/* ---------- photo sections ---------- */
+.mentor{padding:120px 0;background:var(--bg)}
+.mentor-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:center}
+.portrait{position:relative;max-width:440px;margin:0 auto;border-radius:34px;overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:9/14}
+.portrait img{width:100%;height:100%;object-fit:cover}
+.portrait-wrap{position:relative;width:100%}
+.portrait-wrap::before{content:"";position:absolute;inset:26px -22px -22px 26px;border-radius:34px;border:2px solid var(--pink-line);max-width:440px;margin:0 auto}
+.portrait-wrap .quote{position:absolute;z-index:3;left:-8px;bottom:36px;max-width:230px;padding:18px 20px;border-radius:20px;background:var(--navy);color:#fff;font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.35;box-shadow:0 24px 50px -16px rgba(11,22,48,.6)}
+.portrait-wrap .quote b{display:block;font-family:var(--sans);font-style:normal;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--pink-2);margin-top:10px}
+.mentor p.txt{color:var(--muted);font-size:1.05rem;margin-bottom:16px;max-width:560px}
+.mentor p.txt em{color:var(--pink-deep);font-style:normal;font-weight:700}
+.pillars{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.pillars span{padding:10px 20px;border-radius:999px;background:var(--navy);color:#fff;font-weight:600;font-size:.9rem}
+.pillars span:nth-child(2){background:var(--grad-pink)}
+.pillars span:nth-child(3){background:#fff;color:var(--navy);border:1.5px solid var(--navy)}
+.transform{padding:110px 0;background:#fff}
+.tf-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.tf-img{border-radius:30px;overflow:hidden;box-shadow:var(--shadow-lg);position:relative}
+.tf-img img{width:100%;height:auto}
+.tf-list{list-style:none;display:grid;gap:14px;margin:26px 0 32px}
+.tf-list li{display:flex;gap:16px;align-items:center;padding:16px 18px;border-radius:18px;border:1px solid var(--line);background:var(--bg)}
+.tf-list i{flex:none;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:700;color:#fff;background:var(--grad-pink)}
+.tf-list s{color:var(--muted);text-decoration-color:var(--pink)}
+.tf-list b{margin-left:auto;color:var(--pink-deep);font-size:.9rem;white-space:nowrap}
+.showcase{padding:110px 0;background:linear-gradient(180deg,var(--pink-soft),var(--bg))}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:56px;align-items:start}
+.shot{display:block;width:100%;padding:0;border-radius:24px;overflow:hidden;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .45s cubic-bezier(.2,.8,.2,1),box-shadow .45s;position:relative}
+.shot:nth-child(2){margin-top:44px}
+.shot:hover{transform:translateY(-8px) rotate(-.6deg);box-shadow:var(--shadow-lg)}
+.shot img{width:100%;height:auto}
+.shot span{position:absolute;left:14px;bottom:14px;padding:8px 16px;border-radius:999px;background:rgba(11,22,48,.82);backdrop-filter:blur(6px);color:#fff;font-size:.8rem;font-weight:600;opacity:0;transform:translateY(8px);transition:all .3s}
+.shot:hover span{opacity:1;transform:none}
+.lb{position:fixed;inset:0;z-index:300;display:none;place-items:center;padding:24px;background:rgba(7,12,30,.88);backdrop-filter:blur(8px)}
+.lb.open{display:grid}
+.lb img{max-width:min(94vw,900px);max-height:90vh;border-radius:18px;box-shadow:0 40px 100px rgba(0,0,0,.6)}
+.lb .x{position:absolute;top:20px;right:20px}
+@media(max-width:980px){.mentor-grid,.tf-grid{grid-template-columns:1fr;gap:56px}.shots{grid-template-columns:1fr 1fr}.shot:nth-child(2){margin-top:0}.portrait-wrap .quote{left:8px}}
+@media(max-width:600px){.shots{grid-template-columns:1fr}.tf-list li{flex-wrap:wrap}.tf-list b{margin-left:50px}}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -312,6 +352,7 @@ footer li a:hover{color:var(--pink-2)}
     <nav class="links" id="links" aria-label="Main">
       <a href="#browse">Programs</a>
       <a href="#who">Who it's for</a>
+      <a href="#mentor">Mentor</a>
       <a href="#gaps">Skill gaps</a>
       <a href="#process">How it works</a>
       <a href="#faq">FAQ</a>
@@ -423,6 +464,60 @@ footer li a:hover{color:var(--pink-2)}
     </div>
   </div>
 </section>
+
+
+<!-- MENTOR -->
+<section class="mentor" id="mentor">
+  <div class="wrap mentor-grid">
+    <div class="portrait-wrap rv">
+      <div class="portrait"><img src="images/mentor-portrait.jpg" alt="Illustrated portrait of the SkillBoostCenter founder smiling with a coffee" loading="lazy"></div>
+      <div class="quote">"Better HR, Better Workplace, Better Tomorrow."<b>SkillBoostCenter</b></div>
+    </div>
+    <div class="rv">
+      <span class="eyebrow">Meet your mentor</span>
+      <h2 class="title">The expert behind <em>every program</em></h2>
+      <p class="txt">With years of hands-on experience in HR consulting, talent acquisition and career development, SkillBoostCenter was founded with a singular mission: to make expert career guidance accessible to everyone.</p>
+      <p class="txt">Every program blends practical HR knowledge with genuine passion for people's growth. The philosophy is simple — <em>People, Purpose, Potential.</em></p>
+      <div class="pillars"><span>People</span><span>Purpose</span><span>Potential</span></div>
+      <a href="#contact" class="btn btn-pink" style="margin-top:34px">Talk to us <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- TRANSFORM -->
+<section class="transform" id="transform">
+  <div class="wrap tf-grid">
+    <div class="tf-img rv"><img src="images/before-after.jpg" alt="Before and after: from stressed with a weak resume to confident and interview ready" loading="lazy"></div>
+    <div class="rv">
+      <span class="eyebrow">The SkillBoost effect</span>
+      <h2 class="title">Transform your <em>career story</em></h2>
+      <p class="lead">Expert guidance turns stuck, unsure professionals into confident, interview-ready leaders.</p>
+      <ul class="tf-list">
+        <li><i>✓</i><span><s>No interview calls</s></span><b>Strong resume</b></li>
+        <li><i>✓</i><span><s>Low confidence</s></span><b>Interview ready</b></li>
+        <li><i>✓</i><span><s>Feeling stuck</s></span><b>Career growth</b></li>
+      </ul>
+      <a href="#browse" class="btn btn-navy">Start your transformation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase" id="showcase">
+  <div class="wrap center">
+    <div class="rv">
+      <span class="eyebrow">Inside SkillBoostCenter</span>
+      <h2 class="title">Tips, masterclasses &amp; <em>real guidance</em></h2>
+      <p class="lead">A look at what we share — tap any card to view it larger.</p>
+    </div>
+    <div class="shots">
+      <button class="shot rv" data-lb="images/poster-resume.jpg"><img src="images/poster-resume.jpg" alt="Resume Masterclass poster" loading="lazy"><span>Resume Masterclass</span></button>
+      <button class="shot rv" data-lb="images/poster-confidence.jpg"><img src="images/poster-confidence.jpg" alt="Build your career with confidence poster" loading="lazy"><span>Build Your Career with Confidence</span></button>
+      <button class="shot rv" data-lb="images/poster-interview.jpg"><img src="images/poster-interview.jpg" alt="HR expert interviewing a candidate" loading="lazy"><span>Interview Prep &amp; Career Guidance</span></button>
+    </div>
+  </div>
+</section>
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image preview"><button class="x" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1630" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button><img alt=""></div>
 
 <!-- PROCESS -->
 <section class="process" id="process">
@@ -669,6 +764,13 @@ document.querySelectorAll(".rv").forEach((el,i)=>{el.style.transitionDelay=(i%4)
 // hero card tilt
 const stack=$("#stack");
 if(matchMedia("(hover:hover)").matches){ stack.parentElement.addEventListener("pointermove",e=>{const r=stack.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;stack.style.transform=`rotateY(${x*8}deg) rotateX(${-y*8}deg)`}); stack.style.transition="transform .3s"; }
+
+/* lightbox */
+const lb=$("#lb");
+document.querySelectorAll("[data-lb]").forEach(b=>b.addEventListener("click",()=>{const i=lb.querySelector("img");i.src=b.dataset.lb;i.alt=b.querySelector("img").alt;lb.classList.add("open");document.body.style.overflow="hidden"}));
+const closeLb=()=>{lb.classList.remove("open");document.body.style.overflow=""};
+lb.addEventListener("click",closeLb);
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&lb.classList.contains("open"))closeLb()});
 $("#yr").textContent=new Date().getFullYear();
 refresh();
 </script>
