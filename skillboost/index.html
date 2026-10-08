@@ -306,6 +306,19 @@ footer li a:hover{color:var(--pink-2)}
 @media(max-width:980px){.mentor-grid,.tf-grid{grid-template-columns:1fr;gap:56px}.shot:nth-child(2){margin-top:0}.portrait-wrap .quote{left:8px}}
 @media(max-width:600px){.shots{grid-template-columns:1fr}.tf-list li{flex-wrap:wrap}.tf-list b{margin-left:50px}}
 
+
+.poster{position:relative;aspect-ratio:3/4;overflow:hidden;background:var(--pink-soft)}
+.poster img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.card:hover .poster img{transform:scale(1.05)}
+.sheet{max-width:940px}
+.m-grid{display:grid;grid-template-columns:.8fr 1.2fr}
+.m-poster{background:var(--pink-soft)}
+.m-poster{align-self:stretch;display:flex;align-items:center}.m-poster img{width:100%;height:auto;display:block}
+.m-grid .in{padding:44px 40px;align-self:center}
+.facts{grid-template-columns:1fr 1fr!important}
+.facts .fact:last-child{grid-column:1/-1}
+@media(max-width:760px){.m-grid{grid-template-columns:1fr}.m-grid .in{padding:26px 24px 30px}}
+
 /* ---------- reveal ---------- */
 .rv{opacity:0;transform:translateY(34px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -683,10 +696,7 @@ function drawGrid(){
   $("#count").innerHTML = `Showing <b>${list.length}</b> of ${PROGRAMS.length} programs`;
   $("#grid").innerHTML = list.length ? list.map((p,i)=>`
     <button class="card" data-id="${p.id}" style="animation-delay:${i*50}ms" aria-label="${p.short} — view details">
-      <div class="art ${p.art}">${pattern(p.id)}
-        <span class="aud">${AUD[p.aud]}</span><span class="dur">${p.duration}</span>
-        <span class="ico" style="color:${iconColor(p.art)}">${svg(p.icon)}</span>
-      </div>
+      <div class="poster"><img src="images/course-${p.id}.jpg" alt="${p.short} program poster" loading="lazy"></div>
       <div class="body">
         <span class="kind">${p.cat}</span>
         <h3>${p.short}</h3>
@@ -718,20 +728,22 @@ function openModal(id){
   const isAll = p.aud==="all";
   sheet.innerHTML = `
     <button class="x" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="#0b1630" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-    <div class="art ${p.art}">${pattern("m"+p.id)}<span class="aud">${AUD[p.aud]}</span><span class="ico" style="color:${iconColor(p.art)}">${svg(p.icon)}</span></div>
-    <div class="in">
-      <span class="kind eyebrow">${p.cat} program</span>
-      <h3 id="mTitle">${p.title}</h3>
-      <div class="facts">
-        <div class="fact"><small>Duration</small><b>${p.duration}</b></div>
-        <div class="fact"><small>Format</small><b>${p.format}</b></div>
-        <div class="fact"><small>Best for</small><b>${AUD[p.aud]}</b></div>
-      </div>
-      <h5>${isAll?"Target outcome":"Why you'll want it"}</h5>
-      <p class="txt">${p.text}</p>
-      <div class="actions">
-        <button class="btn btn-pink" data-enroll="${p.id}">Enquire about this program <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-        <button class="btn btn-ghost" data-close>Keep browsing</button>
+    <div class="m-grid">
+      <div class="m-poster"><img src="images/course-${p.id}.jpg" alt="${p.short} program poster"></div>
+      <div class="in">
+        <span class="kind eyebrow">${p.cat} program</span>
+        <h3 id="mTitle">${p.title}</h3>
+        <div class="facts">
+          <div class="fact"><small>Duration</small><b>${p.duration}</b></div>
+          <div class="fact"><small>Format</small><b>${p.format}</b></div>
+          <div class="fact"><small>Best for</small><b>${AUD[p.aud]}</b></div>
+        </div>
+        <h5>${isAll?"Target outcome":"Why you'll want it"}</h5>
+        <p class="txt">${p.text}</p>
+        <div class="actions">
+          <button class="btn btn-pink" data-enroll="${p.id}">Enquire about this program <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+          <button class="btn btn-ghost" data-close>Keep browsing</button>
+        </div>
       </div>
     </div>`;
   modal.classList.add("open"); document.body.style.overflow="hidden"; sheet.querySelector(".x").focus();
