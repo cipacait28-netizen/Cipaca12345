@@ -2,3 +2,4 @@ assets/
 output/
 __pycache__/
 models/
+lyrics.json

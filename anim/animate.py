@@ -15,6 +15,11 @@ import json, math, os, subprocess, sys
 import cv2
 import numpy as np
 
+import lyrics_fx
+
+CUES = lyrics_fx.load_cues()
+STICKER = True   # white paper-cut-out outline around the character
+
 W, H, FPS = 720, 1280, 24
 AUDIO = "assets/original/song.wav"
 DUR = 22.45
@@ -300,7 +305,7 @@ class Shot:
         d2 = ((x - fx * self.w) ** 2 + (y - fy * self.h) ** 2) / (r * r)
         return np.clip(img + (np.exp(-d2) * amp)[..., None] * np.array(col, np.float32) * 0.5, 0, 255)
 
-    def frame(self, t, tc):
+    def frame(self, t, tc, f=0):
         """t: shot-local time (ones) ; tc: character time (twos)."""
         c = self.cfg
         rum = c.get("rumble", 0.0)
@@ -309,7 +314,20 @@ class Shot:
         bg = cv2.warpAffine(self.bg, np.float32([[1, 0, -ox], [0, 1, -jy * 0.5]]), (self.w, self.h), borderMode=cv2.BORDER_REFLECT)
         bg = self.glow(bg.astype(np.float32), t)
         bg = self.particles(bg, t, front=False)
+        tg = t + c["s"]
+        for cue in CUES:   # lyric words placed *behind* the character
+            if cue.get("place") == "behind" and cue["t"] - 0.1 <= tg <= cue["end"] + 0.1:
+                fx_, fy_ = cue.get("at", [0.5, 0.2])
+                hw, hh = cue.get("w", 0.6) / 2 * self.w, 0.16 * self.h
+                cx_, cy_ = fx_ * self.w, fy_ * self.h
+                lyrics_fx.draw_cue(bg, cue, tg, f, (cx_ - hw, cy_ - hh, cx_ + hw, cy_ + hh), scale=1.25 / self.sc0)
         ch, al = self.character(tc)
+        if STICKER:
+            k = max(5, int(self.w * 0.009)) | 1
+            ring = cv2.GaussianBlur(cv2.dilate(al, np.ones((k, k), np.uint8)), (0, 0), 1.0)
+            shadow = cv2.GaussianBlur(np.roll(np.roll(ring, 6, 0), 4, 1), (0, 0), 6)
+            bg = bg * (1 - 0.45 * shadow[..., None])
+            bg = bg * (1 - ring[..., None]) + np.array([238, 246, 252], np.float32) * ring[..., None]
         panel = bg * (1 - al[..., None]) + ch.astype(np.float32) * al[..., None]
         panel = self.particles(panel, t, front=True)
         if c.get("flash") is not None:
@@ -331,6 +349,7 @@ class Shot:
         face = M @ np.array([self.fc[0], self.fc[1], 1.0])
         # scene extension above/below the panel: the panel's own colours, stretched and blurred
         y0 = (H - self.dh) // 2
+        self.y0 = y0
         small = cv2.resize(disp, (W // 8, H // 8), interpolation=cv2.INTER_AREA)
         small = cv2.GaussianBlur(small, (0, 0), 3)
         out = cv2.resize(small, (W, H), interpolation=cv2.INTER_CUBIC).astype(np.float32) * 0.62
@@ -411,16 +430,22 @@ def render(f):
     tc_glob = (f // 2) * 2 / FPS
     i = max(k for k, s in enumerate(SHOTS) if s["s"] <= t)
     sc = SHOTS[i]
-    img, face = shot(i).frame(t - sc["s"], tc_glob - sc["s"])
+    img, face = shot(i).frame(t - sc["s"], tc_glob - sc["s"], f)
     u = t - sc["s"]
     if i > 0 and u < XFADE:   # dissolve from the previous shot, with a warm light leak
         prev = SHOTS[i - 1]
-        pimg, _ = shot(i - 1).frame(t - prev["s"], tc_glob - prev["s"])
+        pimg, _ = shot(i - 1).frame(t - prev["s"], tc_glob - prev["s"], f)
         k = smooth(u / XFADE)
         img = pimg * (1 - k) + img * k
         img = light_leak(img, math.sin(math.pi * k), t)
     if i == 0 and u < 0.7:
         img = img * smooth(u / 0.7)
+    S = shot(i)
+    zones = {"top": (24, 24, W - 24, S.y0 + 80), "bottom": (24, S.y0 + S.dh - 80, W - 24, H - 34)}
+    img = np.ascontiguousarray(img, np.float32)
+    for cue in CUES:
+        if cue.get("place", "top") in zones:
+            lyrics_fx.draw_cue(img, cue, t, f, zones[cue.get("place", "top")])
     img = iris(img, t, sc.get("iris_out"), face)
     return film(img, f)
 
