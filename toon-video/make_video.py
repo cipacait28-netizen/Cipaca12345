@@ -457,7 +457,7 @@ def base_frame(f):
         img = np.clip(out, 0, 255).astype(np.uint8)
         center = (W / 2, H / 2)
     elif sec["kind"] == "outro":
-        out = card(ta, T_OUT, [("THE", 150), ("END", 190)], "~ thank you for watching ~")
+        out = card(ta, T_OUT, [("THE", 150), ("END", 190)], "~ thank you ~")
         img = np.clip(out, 0, 255).astype(np.uint8)
         center = (W / 2, H / 2)
     else:
